@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script type="text/javascript"
+        src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="synth.js"></script>
+
+
+    </head>
+    <body>
+
+        <div id="unmute">turn audio on</div>
+        <div id="vis">
+        </div>
+
+        <canvas data-processing-sources="tiaga.pde"></canvas>
+    </body>
+
+    <script type="text/javascript">
+
+    var context;
+    var mute = true;
+    document.getElementById("unmute").style.height=30+"px";
+    document.getElementById("unmute").style.width=200+"px";
+    document.getElementById("unmute").style.background="#BDBDBD";
+
+    document.getElementById("unmute").onclick =function(){
+          if (mute==true){
+            mute=false;
+            setupWebAudio();
+            openNotes(5);
+            document.getElementById("unmute").innerHTML="turn audio off";
+          }
+          else{
+            mute =true;
+            closeNotes();
+            document.getElementById("unmute").innerHTML="turn audio on";
+          }
+        };
+
+function setupWebAudio(){
+  try{
+    context= new webkitAudioContext();
+  }
+  catch(err){
+    alert("this uses the web audio API, try opening it in google chrome \n\n <3 whichlight" );
+  }
+}
+
+    </script>
+
+</html>
