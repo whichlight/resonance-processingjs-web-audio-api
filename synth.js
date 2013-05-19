@@ -3,7 +3,6 @@ var gainVal = 0.03;
 var qval = 25;
 
 function openNotes(){
-      // synths.push(setupSynth(350));
        synths.push(setupSynth(150));
        synths.push(setupSynth(100));
        synths.push(setupSynth(200));
