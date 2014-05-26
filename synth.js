@@ -60,7 +60,7 @@ function setupSynth(f){
     nodes.volume.gain.value=0;
     nodes.source.noteOn(0);
     nodes.volume.gain.value=0;
-    setReverbImpulseResponse('http://thelab.thingsinjars.com/web-audio-tutorial/Church-Schellingwoude.mp3', nodes.reverb, function() {
+    setReverbImpulseResponse('reverb.mp3', nodes.reverb, function() {
       nodes.source.noteOn(0);
     });
     return nodes;
